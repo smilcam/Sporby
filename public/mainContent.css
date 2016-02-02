@@ -1,0 +1,229 @@
+.logup {
+ width: 100%;
+     width:75%;
+margin:  auto;
+text-align: center;
+position: relative;
+color: black;
+}
+
+.forumHeader {
+    height: 80px;
+    width:100%;
+    border-bottom: #d4d4d4 3px solid;
+    text-align: center;
+    padding-top: 20px;
+}
+.forumHeader h1 {
+   color: #999;
+}
+
+
+
+.filters{
+    height: 20px;
+    width: 100%;
+    border-bottom: #d4d4d4 3px solid;
+    text-decoration: none;
+    color: #999;
+    
+
+}
+
+.filters li {
+display: inline-block;
+   padding: 0;
+   padding-right: 2em;
+    font-family: Verdana,Geneva,sans-serif;
+    font-size:15px;
+    margin-top: 0;
+    font-weight: bold;
+    height: 20px;
+    text-decoration: none;
+    color: #999;
+}
+
+.filters li a:hover {
+  color: black;    ;
+  text-decoration: underline overline;
+}
+
+.filters li a:visited {
+  color: #999;    ;
+  text-decoration: underline overline;
+}
+
+
+.filters .logup li {
+    float:right;
+    position: relative;
+bottom: 35px;  
+padding-right:1em;
+left: 135px;
+
+}
+
+
+
+
+
+
+/*MAIN CONTAINER*/
+
+.mainContainer {
+  box-sizing: border-box;
+  margin: 0 2.5%;
+  margin-top: 50px;
+  background-color: white;
+  width:95%;
+  box-shadow: rgba(0,0,0,0.5) 0px 0px 20px;
+  position:absolute;
+  font:normal x-small verdana,arial,helvetica,sans-serif;
+}
+
+
+.forum {
+    width: 65%;
+    height:100px;
+    background-color: white;
+    border-bottom: #d4d4d4 3px solid;
+    border-right: #d4d4d4 3px solid;
+    box-shadow: rgba(0,0,0,0.5) 0px 0px 20px;
+   
+    
+   
+    
+}
+
+
+.forum .commentLink {
+    
+    float:right;
+   margin-right: 5%;
+   text-decoration: none;
+   color: #444444;
+    font-family:Verdana,Geneva,sans-serif;
+    font-size: 15px;
+    margin-top: -3%;
+   
+}
+
+.forum .commentLink:hover {
+    
+    color: #e6e6e6;
+    text-decoration: none;
+}
+
+
+
+
+.forum .titleLink {
+    font-family:Verdana,Geneva,sans-serif;
+    font-size: 16px;
+    margin-left:20%;
+    position: relative; 	
+    bottom:80px;     
+}
+
+
+
+
+
+.upArrow {
+    height: 45px;
+    width: 45px;
+    margin-left: 4%;
+   margin-top: 1.5%;
+}
+
+
+
+.upvoteNumbers {
+    font-size: 15px;
+    margin-left: 6%;
+    font:verdana,arial,helvetica,sans-serif;
+    color: #d4d4d4;   
+}
+
+
+.forum .authorLink {
+    font-family:Verdana,Geneva,sans-serif;
+    font-size: 10px;
+    position: relative; 	
+    bottom:20px;    
+    left: 100px;
+    color:#719699
+  
+}
+
+
+
+.submit {
+  
+    margin-left: 65%;
+    position: absolute;
+    height:220px;
+    border-bottom:#d4d4d4 3px solid;
+    width: 35%;
+    
+}
+
+.submit .form-control {
+   border: 5px solid white; 
+    -webkit-box-shadow: 
+      inset 0 0 8px  rgba(0,0,0,0.1),
+            0 0 16px rgba(0,0,0,0.1); 
+    -moz-box-shadow: 
+      inset 0 0 8px  rgba(0,0,0,0.1),
+            0 0 16px rgba(0,0,0,0.1); 
+    box-shadow: 
+      inset 0 0 8px  rgba(0,0,0,0.1),
+            0 0 16px rgba(0,0,0,0.1); 
+    padding: 15px;
+    background: rgba(255,255,255,0.5);
+    margin: 0 auto;
+    width: 100%;
+}
+
+
+.submit .submitForm {
+   
+    margin: 0 5%;
+}
+
+.submit .submitForm h3 {
+   margin-left:33%;
+    font-size: 15px;
+     font-family: Verdana,Geneva,sans-serif;
+}
+
+
+.submitBtn {
+    	background: #25A6E1;
+	background: -moz-linear-gradient(top,#25A6E1 0%,#188BC0 100%);
+	background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#25A6E1),color-stop(100%,#188BC0));
+	background: -webkit-linear-gradient(top,#25A6E1 0%,#188BC0 100%);
+	background: -o-linear-gradient(top,#25A6E1 0%,#188BC0 100%);
+	background: -ms-linear-gradient(top,#25A6E1 0%,#188BC0 100%);
+	background: linear-gradient(top,#25A6E1 0%,#188BC0 100%);
+	filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#25A6E1',endColorstr='#188BC0',GradientType=0);
+	padding:8px 13px;
+	color:#fff;
+	 font-family: Verdana,Geneva,sans-serif;
+	font-size:13px;
+    float:right;
+	border-radius:4px;
+	-moz-border-radius:4px;
+	-webkit-border-radius:4px;
+	border:1px solid #1A87B9;
+    position: relative;
+   margin: -9% 10%;
+}
+
+.submit .submitForm .bottomAdd {
+    font-size: 8px;
+    display: inline-block;
+    margin-left:1%;
+    width:80%;
+    margin-top: 6%;
+}
