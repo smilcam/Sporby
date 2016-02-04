@@ -9,8 +9,8 @@ function($scope, posts, auth){
   
 $scope.myFilters = [
     {type: '-upvotes'},
-    {type: '-comments'},
-    {type: '-time'},
+    {type: '-comments.length'},
+    {type: 'time'},
 ] 
   
 $scope.posts = posts.posts;

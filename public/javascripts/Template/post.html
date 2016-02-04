@@ -1,6 +1,6 @@
 
   <div class="page-header" ng-control='PostsCtrl'>
-    <h3>
+    <h3 class="page-header">
       <a ng-show="post.link" href="{{post.link}}">
         {{post.title}}
       </a>
@@ -10,22 +10,30 @@
     </h3>
   </div>
 
-  <div ng-repeat="comment in post.comments track by $index | orderBy:'-upvotes'">
-    <span
-      ng-click="incrementUpvotes(comment, post, $index)"><img class = "upArrow" src='./images/up-arrow36.png'></span>
-    {{comment.upvotes}} - by {{comment.author}}
-    <span style="font-size:20px; margin-left:10px;">
+  <div class='commentForm' ng-repeat="comment in post.comments track by $index | orderBy:'-upvotes'">
+      
+       <a class="commentAuthor"> by- {{comment.author}}</a> 
+       
+     <span
+      ng-click="incrementUpvotes(comment, post, $index)">
+      
+        <img class = "upArrow" src='./images/up-arrow36.png'>
+        
+      </span>
+       <h1 class ="commentUpvote">  {{comment.upvotes}} </h1> 
+      
+      
+      
+  
+    <span class='commentBody'>
       {{comment.body}}
     </span>
   </div>
   
-        <span  ng-show="comment.time" href="{{comment.time}}">>
-           submitted: {{comment.time}}
-        </span>
+       
   
   
-    <form ng-submit="addComment()"
-    style="margin-top:30px;">
+    <form class='addComment' ng-submit="addComment()">
     <h3>Add a new comment</h3>
 
     <div class="form-group">
