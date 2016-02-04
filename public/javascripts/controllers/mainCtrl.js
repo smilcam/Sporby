@@ -7,7 +7,11 @@ app.controller('MainCtrl', [
 function($scope, posts, auth){
   $scope.test = 'Hello world!';
   
-  
+$scope.myFilters = [
+    {type: '-upvotes'},
+    {type: '-comments'},
+    {type: '-time'},
+] 
   
 $scope.posts = posts.posts;
 
@@ -27,8 +31,13 @@ $scope.addPost = function(){
 
 $scope.isLoggedIn = auth.isLoggedIn;
 
-$scope.incrementUpvotes = function(post) {
-  posts.upvote(post);
+$scope.incrementUpvotes = function(post, index) {
+  posts.upvote(post).then(function(response){
+      $scope.posts [index] = response.data;
+  })
 };
+
+
+ 
 
 }]);

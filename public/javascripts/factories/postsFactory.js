@@ -30,25 +30,54 @@ app.factory('posts', ['$http', 'auth', function($http, auth){
   };
   
   o.upvote = function(post){
-      return $http.put('/posts/' + post._id + '/upvote', null, {
-    headers: {Authorization: 'Bearer '+auth.getToken()}
-    }).success(function(data){
-          post.upvotes += 1
-      })
-  }
+      console.log(post);
+      return $http ({
+          method: 'PUT',
+          url: '/posts/' + post._id + '/upvote',
+          data: {upvotes: post.upvotes + 1},
+          headers: {Authorization: 'Bearer ' +      auth.getToken(), upvotes:             post.upvotes + 1} 
+      }).then(function(response){
+          return response;
+          
+      });
+     
+      
+    //   return $http.put('/posts/' + post._id + '/upvote', null, {
+    // headers: {Authorization: 'Bearer ' + auth.getToken(), upvotes: post.upvotes + 1}
+    // }).success(function(data){
+    //    return data.data;
+    //   })
+    
+  };
   o.addComment = function(id, comment) {
       console.log(comment);
       return $http.post('/posts/' + id + '/comments' , comment, {
-    headers: {Authorization: 'Bearer '+auth.getToken()}
-    });
+    headers: {Authorization: 'Bearer '+ auth.getToken()}
+        
+    }).then(function(response){
+        return response.data;
+    })
   };
-  o.upvoteComment = function(post, comment){
-      return $http.put('/posts/' + post._id + '/comments/' + comment._id + '/upvote', null, {
-    headers: {Authorization: 'Bearer '+auth.getToken()}
-    }).success(function(data){
-          comment.upvotes += 1;
+  
+  o.upvoteComment = function(comment, post){
+      return $http ({
+          method:'PUT',
+          url:'/posts/' + post._id + '/comments/' + comment._id + '/upvote',
+          data: {upvotes: comment.upvotes +1},
+          headers: {Authorization: 'Bearer '+ auth.getToken(), upvotes:             comment.upvotes + 1}
+      }).then(function(response){
+          return response;
       })
-  }
+      
+  }    
+      
+      
+//       return $http.put('/posts/' + post._id + '/comments/' + comment._id + '/upvote', null, {
+//     headers: {Authorization: 'Bearer '+auth.getToken()}
+//     }).success(function(data){
+//           comment.upvotes += 1;
+//       })
+//   }
   
   
   

@@ -16,7 +16,7 @@ $scope.addComment = function(){
   posts.addComment(post._id, {
     body: $scope.body,
     author: 'user',
-  }).success(function(comment){
+  }).then(function(comment){
       $scope.post.comments.push(comment);
   });
   $scope.body = '';
@@ -25,8 +25,12 @@ $scope.addComment = function(){
 
 $scope.isLoggedIn = auth.isLoggedIn;
 
-$scope.incrementUpvotes = function(comment) {
-    posts.upvoteComment(post, comment);
-}
+$scope.incrementUpvotes = function(comment, post, index) {
+   posts.upvoteComment(comment, post).then(function(response){
+       console.log(response.data);
+       $scope.posts[index] = response.data
+   })
+}   
+    
 
 }]);

@@ -35,14 +35,15 @@
                 <h1> HOME</h1>
             </div>
 
-  <div class = 'filters'
+  <div class = 'filters'>
     
     <nav class = "topFilters"> 
+     <select ng-options = 'filter.type for filter in myFilters' ng-model='filterByDis'></select>
      <ul class= "theFilters">
-         <li>Tending</li>
+         <!--<li ng-click= '{{myFilters.upvotes}}'>Tending</li>
          <li>Most Comments </li>
          <li>Most Votes </li>
-         <li>New </li>
+         <li>New </li>-->
          
       </ul> 
       </nav>
@@ -111,10 +112,10 @@
    
 
  
-      <div class ="forum" ng-repeat="post in posts | orderBy:'-upvotes'">
-      
+      <div class ="forum" ng-repeat="post in posts  | orderBy :filterByDis.type track by $index">
+       {{filterByDis.type}}
         <span class ="upvoteNubers"
-         ng-click="incrementUpvotes(post)"><img class = "upArrow" src='./images/up-arrow36.png'></span>
+         ng-click="incrementUpvotes(post, $index)"><img class = "upArrow" src='./images/up-arrow36.png'></span>
          <h1 class ="upvoteNumbers"> {{post.upvotes}} </h1>
          
         <a class="authorLink"> posted by: {{post.author}}</a>  
@@ -126,9 +127,11 @@
             {{post.title}}
           </span>
             
-             <a class = "commentLink" href="#/posts/{{post._id}}">Comments</a>
+             <a class = "commentLink" href="#/posts/{{post._id}}">{{post.comments.length}}     Comments</a>
                        
-              
+           <span class="time" href="{{post.time}}"> 
+               submitted: {{post.time | date:'MM/dd h:mma'}}
+           </span>  
                 
      
       </div>
