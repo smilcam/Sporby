@@ -1,5 +1,5 @@
 .logup {
- width: 100%;
+ /*width: 100%;*/
      width:75%;
 margin:  auto;
 text-align: center;
@@ -21,24 +21,25 @@ color: black;
 
 
 .filters{
-    height: 20px;
+    height: 25px;
     width: 100%;
     border-bottom: #d4d4d4 3px solid;
     text-decoration: none;
     color: #999;
+    right:5%;
     
 
 }
 
 .filters li {
 display: inline-block;
-   padding: 0;
-   padding-right: 2em;
+   
+   /*padding-right: 2em;*/
     font-family: Verdana,Geneva,sans-serif;
     font-size:15px;
-    margin-top: 0;
+    margin-top: 9;
     font-weight: bold;
-    height: 20px;
+    height: 25px;
     text-decoration: none;
     color: #999;
 }
@@ -55,11 +56,11 @@ display: inline-block;
 
 
 .filters .logup li {
-    float:right;
+    
     position: relative;
-bottom: 35px;  
-padding-right:1em;
-left: 135px;
+    bottom: 35px;  
+       left:60%; 
+
 
 }
 
@@ -71,14 +72,16 @@ left: 135px;
 /*MAIN CONTAINER*/
 
 .mainContainer {
-  box-sizing: border-box;
-  margin: 0 2.5%;
+  /*box-sizing: border-box;*/
+ left:0;
+ margin: 0 2.5%;
   margin-top: 50px;
   background-color: white;
   width:95%;
   box-shadow: rgba(0,0,0,0.5) 0px 0px 20px;
   position:absolute;
   font:normal x-small verdana,arial,helvetica,sans-serif;
+  /*height:100vh*/
 }
 
 
@@ -89,7 +92,9 @@ left: 135px;
     border-bottom: #d4d4d4 3px solid;
     border-right: #d4d4d4 3px solid;
     box-shadow: rgba(0,0,0,0.5) 0px 0px 20px;
-    
+    position: relative;
+    text-align: center;
+    display: flex;
     
     
    
@@ -97,18 +102,7 @@ left: 135px;
 }
 
 
-.forum .commentLink {
-    
-    
-   margin-left: 55%;
-   text-decoration: none;
-   color: #444444;
-    font-family:Verdana,Geneva,sans-serif;
-    font-size: 15px;
-    margin-top: -6%;
-    position:absolute;
-   
-}
+
 
 .forum .commentLink:hover {
     
@@ -119,47 +113,112 @@ left: 135px;
 
 
 
-.forum .titleLink {
-    font-family:Verdana,Geneva,sans-serif;
-    font-size: 16px;
-    margin-left:10%;
-    position: relative; 	
-    bottom:50px; 
-    width:80%;
-    height: 1.5em;
-   
-    
-    
+
+
+
+.bothUpvotes {
+    display: flex;
+    flex-direction: column;
+    margin-left: 50;
+    margin-top: 20;
 }
-
-
-
 
 
 .upArrow {
-    height: 45px;
-    width: 45px;
-    margin-left: 4%;
-   margin-top: 1.5%;
+    height: 4em;
+    width: 4em;
+   position: relative; 
+   
+  
 }
 
 
 
-.upvoteNumbers {
+.upvoteNumbers { 
+    
     font-size: 15px;
-    margin-left: 6%;
-    font:verdana,arial,helvetica,sans-serif;
-    color: #d4d4d4;   
+   
+    font-family:courier;
+    color: #d4d4d4;  
+    
+}
+
+
+.bottomStuff {
+    position: absolute;
+    display:flex;
+    flex-direction: column;
+    align-items: baseline;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    left:130;
+    width:80%;
+    
+    
+   
+     
+    /*bottom: 40;
+   
+   
+    width:100%;*/
+}
+
+.forum .commentLink {
+   text-decoration: none;
+   color: #444444;
+    font-family:Verdana,Geneva,sans-serif;
+    font-size: 12px;
+    display:flex;
+    margin-top:-5;
+   
+   
+    
+    
+   
+}
+.forum .titleLink {
+    font-family:Verdana,Geneva,sans-serif;
+    font-size: 16px;
+    display:flex;
+    margin-bottom:1.5%;
+     flex-wrap: wrap;
+    word-wrap: break-word;
+    margin-top:9;
+    text-decoration: none;
+    color:blue;
+    
+}
+
+
+.titleLink:hover {
+   color: blue;
+    cursor: auto;
+    text-decoration: underline;
+    
+}
+.titleLink a:visited {
+   color: purple;
+    
+}
+
+
+.middleLine {
+    display: flex;
+    flex-direction: row;
+    align-items:flex-start;
+    width:100%;
+    margin-bottom:1.5%;
+    
+  
 }
 
 
 .forum .authorLink {
     font-family:Verdana,Geneva,sans-serif;
     font-size: 10px;
-    position: relative; 	
-    bottom:20px;    
-    left: 100px;
-    color:#719699
+    display:flex;
+    color:#719699;
+    
   
 }
 
@@ -169,7 +228,7 @@ left: 135px;
   
     margin-left: 65.5%;
     position: absolute;
-    height:220px;
+    height:260px;
     background-color:#F7F7F5;
     width: 34.5%;
     word-wrap: normal;
@@ -233,10 +292,27 @@ left: 135px;
     display: inline-block;
     margin-left:1%;
     width:80%;
-    margin-top: 6%;
+    margin-top: 4%;
+    position: absolute;
 }
 
 
+.addPost {
+   font-family: Verdana,Geneva,sans-serif;  
+   
+}
+
+
+input[type="text"] {
+    font-family: Verdana,Geneva,sans-serif; 
+    font-size: 15px;
+}
+
+
+.optionStyle select{
+    font-size:15px;
+    font-family: Verdana,Geneva,sans-serif;  
+} 
 
 
 

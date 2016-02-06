@@ -12,20 +12,26 @@
     border-right: #d4d4d4 3px solid;
     box-shadow: rgba(0,0,0,0.5) 0px 0px 20px;
     font-size: 1em;
+    position: relative;
     
 }
 
 .addComment {
-  
-    margin-left: 64.75%;
-    margin-top: -51.5%;
-    position: absolute;
+/*  
+    margin-left: 65.5%;
+    margin-top: -31%;
+    position: relative;
     height:220px; 
-    width: 35%;
-  
-  
+    width: 34.5%;
     background-color: #F7F7F5;
-    
+    bottom:100;*/
+     margin-left: 55%;
+    position: absolute;
+    height:220px;
+    background-color:#F7F7F5;
+    width: 34.5%;
+    word-wrap: normal;
+    bottom:1000;
 }
 
 
@@ -78,7 +84,7 @@
 	border:1px solid #1A87B9;
     position: relative;
     margin-top:5%;
-  margin-right: 20%;
+  /*margin-right: 50%;*/
     
     
 }
@@ -102,12 +108,15 @@
 
 
 .commentBody {
-     font-family:Verdana,Geneva,sans-serif;
+font-family:Verdana,Geneva,sans-serif;
     font-size: 16px;
-    margin-left:22%;
-    position: relative; 	
-    bottom:85px; 
-    word-wrap: normal;  
+    display:flex;
+    margin-bottom:1.5%;
+     flex-wrap: wrap;
+    word-wrap: break-word;
+    margin-top:9;
+    text-decoration: none;
+    color:blue;
 }
 
 
@@ -121,14 +130,12 @@
 }
 
 
-.commentAuthor {
-      font-family:Verdana,Geneva,sans-serif;
-    font-size: 10px;
-    position: relative; 	
-    top: 30;   
-    left:200;
-    color:#719699
-  
-    
-    
+ .comment {
+   margin-top: 2%;
+
 }
+
+.subcomment {
+    height:220px;
+}
+

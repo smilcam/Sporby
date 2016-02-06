@@ -45,7 +45,8 @@ read: function(req, res, next) {
 }, 
 
 postReturn: function(req, res, next) {
-    Post.findById(req.params.post)
+    Post.findById(req.params.post, 
+     Post.find({})
     .populate('comments')
     .exec(
     function(err, post){

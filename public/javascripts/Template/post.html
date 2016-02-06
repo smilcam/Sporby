@@ -1,7 +1,11 @@
 
   <div class="page-header" ng-control='PostsCtrl'>
+      
     <h3 class="page-header">
-      <a ng-show="post.link" href="{{post.link}}">
+         
+  
+    <!--POST LINK-->
+        <a ng-show="post.link" href="{{post.link}}">
         {{post.title}}
       </a>
       <span ng-hide="post.link">
@@ -9,39 +13,51 @@
       </span>
     </h3>
   </div>
-
-  <div class='commentForm' ng-repeat="comment in post.comments track by $index | orderBy:'-upvotes'">
-      
-       <a class="commentAuthor"> by- {{comment.author}}</a> 
-       
-     <span
-      ng-click="incrementUpvotes(comment, post, $index)">
-      
-        <img class = "upArrow" src='./images/up-arrow36.png'>
-        
-      </span>
-       <h1 class ="commentUpvote">  {{comment.upvotes}} </h1> 
-      
-      
-      
   
-    <span class='commentBody'>
-      {{comment.body}}
-    </span>
-  </div>
-  
-       
-  
-  
-    <form class='addComment' ng-submit="addComment()">
-    <h3>Add a new comment</h3>
-
+   <!--ADD COMMENT FORM-->
+   
+   <div class="submit subcomment">
+    <form class='submitForm' ng-submit="addComment()">
+    <h3 class = 'addPost'>Add a new comment</h3>
+    <br> </br>
     <div class="form-group">
       <input type="text"
       class="form-control"
       placeholder="Comment"
       ng-model="body"></input>
     </div>
-    <button type="submit" class="btn btn-primary">Post</button>
+    <button class="commentBtn"  type="submit">Post</button>
   </form>
+  </div>     
+
+
+
+  <div class='forum' ng-repeat="comment in post.comments track by $index | orderBy:'-upvotes'">
+         
+<div class = "bothUpvotes">
+     <span class ="upvoteNubers"
+      ng-click="incrementUpvotes(comment, post, $index)">
+        <img class = "upArrow" src='./images/up-arrow36.png'>
+      </span>
+      
+       <h1 class ="upvoteNumbers">  {{comment.upvotes}} </h1> 
+ </div>
+      
+  <div class ="bottomStuff">    
+       <span class='titleLink'>
+                    {{comment.body}}
+                    </span>
+                                     
+   <a class="authorLink comment"> by- {{comment.author}}</a> 
+                   
+                    
+  </div>    
+    
+    
+    
+    
+  </div>
+  
+       
+ 
 

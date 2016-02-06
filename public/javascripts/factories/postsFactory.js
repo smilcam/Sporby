@@ -35,7 +35,7 @@ app.factory('posts', ['$http', 'auth', function($http, auth){
           method: 'PUT',
           url: '/posts/' + post._id + '/upvote',
           data: {upvotes: post.upvotes + 1},
-          headers: {Authorization: 'Bearer ' +      auth.getToken(), upvotes:             post.upvotes + 1} 
+          headers: {Authorization: 'Bearer ' +      auth.getToken()} 
       }).then(function(response){
           return response;
           
@@ -64,7 +64,7 @@ app.factory('posts', ['$http', 'auth', function($http, auth){
           method:'PUT',
           url:'/posts/' + post._id + '/comments/' + comment._id + '/upvote',
           data: {upvotes: comment.upvotes +1},
-          headers: {Authorization: 'Bearer '+ auth.getToken(), upvotes:             comment.upvotes + 1}
+          headers: {Authorization: 'Bearer '+ auth.getToken(), upvotes: comment.upvotes + 1}
       }).then(function(response){
           return response;
       })

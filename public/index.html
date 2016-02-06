@@ -4,21 +4,22 @@
    <link rel="stylesheet" type="text/css" href="./stylesheets/style.css">
     <link rel="stylesheet" type="text/css" href="./stylesheets/mainContent.css">
     <link rel="stylesheet" type="text/css" href="./stylesheets/comment.css">
+    <link rel="stylesheet" type="text/css" href="./stylesheets/logUp.css">
 
  
 </head>
 <header>
-     <nav class='mainNav'>
-   <ul>
-    <a ui-sref="home"><li>HOME</li></a>
-    <a ui-sref="nba"><li>NBA</li></a>
-    <a ui-sref="nfl"><li>NFL</li></a>
-    <a ui-sref="nhl"><li  class='nhl'>NHL</li></a>
-    <a ui-sref="mlb"><li>MLB</li></a>
-    <a ui-sref="newSport"><li>NEW SPORT</li></a>
+     
+   
+    <a class="home" ui-sref="home">HOME</a>
+    <a class="nba" ui-sref="nba">NBA</a>
+    <a class="nfl" ui-sref="nfl">NFL</a>
+    <a class="logo"></a>
+    <a class="nhl" ui-sref="nhl">NHL</a>
+    <a class="mlb" ui-sref="mlb">MLB</a>
+    <a class="new" ui-sref="newSport">NEW SPORT</a>
    </ul>
   </nav>
-  <div class="logo"></div>
  </header> 
     
     
@@ -39,7 +40,14 @@
   <div class = 'filters'>
     
     <nav class = "topFilters"> 
-     <select ng-options = 'filter.type for filter in myFilters' ng-model='filterByDis'>Filter</select>
+        
+     <label> Sort By: </label>   
+     <select ng-options = 'filter.type for filter in myFilters' ng-model='filterByDis'>
+         <option> </option>
+         <option> </option>
+         <option> </option>
+         
+     </select>
      
      
          <!--<li ng-click= '{{myFilters.upvotes}}'>Tending</li>
@@ -51,15 +59,19 @@
       </nav>
 
 
-
+  
     <nav class="logup" ng-controller="NavCtrl">
     <ul class="nav navbar-nav">
+        <li ng-hide="isLoggedIn()"><a href="/#/login">Log In</a></li>
+          <li ng-show="isLoggedIn()"><a>{{ currentUser() }}</a></li>
+          <li> / </li>
+          
          <li ng-hide="isLoggedIn()"><a href="/#/register">Register</a></li>
           <li ng-show="isLoggedIn()"><a href="" ng-click="logOut()">Log Out</a></li>
-           <li> / </li>
-      <li ng-show="isLoggedIn()"><a>{{ currentUser() }}</a></li>
+           
+    
      
-      <li ng-hide="isLoggedIn()"><a href="/#/login">Log In</a></li>
+      
     
      
     </ul>
@@ -79,7 +91,8 @@
   
   <div class= 'submit'>
       <form class='submitForm' ng-submit="addPost()">
-        <h3>Add a new post</h3>
+        <h3 class ="addPost">Add a new post</h3>
+        <br></br>
 
         <div class="form-group">
           <input type="text"
@@ -93,13 +106,14 @@
           class="form-control"
           placeholder="Link"
           ng-model="link"></input>
+          <button type="submit" class="submitBtn">Post</button>
         </div>
         
         <br/>
         <div ng-hide="isLoggedIn()">
             <h3 class='bottomAdd'>You need to <a href="/#/login">Log In</a> or <a href="/#/register">Register</a> before you can add a post.</h3>
             </div>
-        <button type="submit" class="submitBtn">Post</button>
+        
         
          
       </form>
@@ -109,36 +123,50 @@
       
       </div>
   
-  
+  <!---->
   
    
 
  
       <div class ="forum" ng-repeat="post in posts |orderBy: '-upvotes'  | orderBy :filterByDis.type track by $index">
     
-    
-    
-    
+    <div class = "bothUpvotes">
         <span class ="upvoteNubers"
-         ng-click="incrementUpvotes(post, $index)"><img class = "upArrow" src='./images/up-arrow36.png'></span>
-         <h1 class ="upvoteNumbers"> {{post.upvotes}} </h1>
+         ng-click="incrementUpvotes(post, $index)">
+         <img class = "upArrow" src='./images/up-arrow36.png'>
+         </span>
          
-        <a class="authorLink"> posted by: {{post.author}}</a>  
-        
-          <a class="titleLink" ng-show="post.link" href="{{post.link}}">
+         <h1 class ="upvoteNumbers"> {{post.upvotes}} </h1>
+    </div>
+         
+
+         
+ <div class ='bottomStuff'>
+              <a class="titleLink" ng-show="post.link" href="{{post.link}}">
             {{post.title}}
-          </a>
+             </a>
+             
           <span class="titleLink" ng-hide="post.link">
             {{post.title}}
           </span>
-            
-             <a class = "commentLink" href="#/posts/{{post._id}}">{{post.comments.length}}     Comments</a>
-                       
-           <span class="time" href="{{post.time}}"> 
+           
+           
+     <div class ='middleLine'>
+           <span class="time"> 
                submitted: {{post.time | date:'MM/dd h:mma'}}
-           </span>  
-                
-     
+                | by: {{post.author}}
+              
+
+                <!--<span class="authorLink"> by: {{post.author}} </span>-->
+            </span>  
+
+             
+     </div>
+           
+            <a class = "commentLink" href="#/posts/{{post._id}}">{{post.comments.length}}     comments</a>    
+</div>
+         
+    
       </div>
 
 

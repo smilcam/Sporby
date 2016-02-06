@@ -36,7 +36,7 @@ function($stateProvider, $urlRouterProvider) {
 })
 .state('register', {
   url: '/register',
-  templateUrl: './javascripts/Template/register.html',
+  templateUrl: './javascripts/Template/login.html',
   controller: 'AuthCtrl',
   onEnter: ['$state', 'auth', function($state, auth){
     if(auth.isLoggedIn()){
