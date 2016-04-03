@@ -14,6 +14,7 @@
     font-size: 1em;
     position: relative;
     
+    
 }
 
 .addComment {
@@ -25,21 +26,25 @@
     width: 34.5%;
     background-color: #F7F7F5;
     bottom:100;*/
-     margin-left: 55%;
+   
     position: absolute;
-    height:220px;
+    height:260px;
     background-color:#F7F7F5;
-    width: 34.5%;
+    width: 100%;
     word-wrap: normal;
-    bottom:1000;
+    bottom:1360;
+    text-align: center;
+    top:0%;
+    
 }
 
 
 .addComment h3 {
-   margin-left:35%;
-   margin-bottom: 5%;
+  
+  padding-top:10px;
     font-size: 15px;
      font-family: Verdana,Geneva,sans-serif;
+     text-align: center;
 }
 
 
@@ -72,7 +77,6 @@
 	background: -o-linear-gradient(top,#25A6E1 0%,#188BC0 100%);
 	background: -ms-linear-gradient(top,#25A6E1 0%,#188BC0 100%);
 	background: linear-gradient(top,#25A6E1 0%,#188BC0 100%);
-	filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#25A6E1',endColorstr='#188BC0',GradientType=0);
 	padding:8px 13px;
 	color:#fff;
 	 font-family: Verdana,Geneva,sans-serif;
@@ -83,24 +87,33 @@
 	-webkit-border-radius:4px;
 	border:1px solid #1A87B9;
     position: relative;
-    margin-top:5%;
-  /*margin-right: 50%;*/
+    margin-top:3%;
+   
+margin-right: 10%;
     
     
 }
 
 .page-header {
-    width: 70%;
+     width: 65%;
+    min-height:100px;
+    height:auto;
+    position: relative;
+    display: flex;
+    word-wrap: break-word; 
+    overflow:hidden;   
+    border-bottom: 5px solid #e6e6e6;
+   
 }
 
 
 
-.page-header h3 {
+.pageHead {
    font-family: Verdana,Geneva,sans-serif; 
    font-size: 18px;
-   text-align: center; 
-   width: 65%;
-   margin-left:15%;
+   width: 69%;
+   padding-top:20px;
+   margin: 0 auto;
 }
 
 
@@ -130,12 +143,51 @@ font-family:Verdana,Geneva,sans-serif;
 }
 
 
- .comment {
+
+
+.mainContainer .commentPaginate {
+    color:white;
+}
+
+textarea{ 
+    max-height:100px;  
+    max-width:80%;
+    margin-right:40.5%;
+    font-family: Verdana,Geneva,sans-serif; 
+    font-size: 15px;
+}
+
+.createComment {
+    color:#444;
+    font-family:Verdana,Verdana, Geneva, Tahoma, sans-serif;
+    margin-top:6%; 
+
+    font-weight: bold;
+}
+
+
+
+
+ 
+ 
+ /*.comment {
    margin-top: 2%;
 
 }
 
-.subcomment {
-    height:220px;
+.subcomment { 
+ margin-left: 65.5%;
+    position: absolute;
+    height:260px;
+    background-color:#F7F7F5;
+    width: 34.5%;
+    word-wrap: normal;
+  
 }
 
+.subcomment h3 { 
+  font-family: Verdana,Geneva,sans-serif;
+    margin-left:35%;
+    padding-top:55px;
+  
+}*/

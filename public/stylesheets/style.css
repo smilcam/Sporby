@@ -1,90 +1,111 @@
 body {
-  padding: 50px;
+ 
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   background-color: #6699FF;
-  width: 100vh;
+  width:100vh;    
   height: 100vh;
-  box-shadow: rgba(0,0,0,0.5) 0px 0px 20px;
 }
 
 
 
 
   header {
-width: 200%;
-margin: 0  5%;
-color: white;
+width: 100vh;
 font-family: Verdana,Geneva,sans-serif;
 font-size:20px;
-height:50px;
+height:100px;
+background-color: #6699ff;
 
 
 }
 
 /*HEADER*/
-
+.topActive {
+    background-color:white;
+}
 .home {
-    margin-left:28%;
+    margin-left:16%;
     margin-right:5%;
     padding-right:10px;
     position: absolute;
-    top: 7%;
+    top:70;
 }
+.getClass:visited {
+  background-color: white;
+}
+
 
 .nba {
-      margin-left:33%;
+      margin-left:26%;
     margin-right:5%;
     position: absolute;
-    top: 7%;
+     top:70;
 }
 
+.nba:visited {
+    color:pink;
+}
+
+
 .nfl {
-     margin-left:38%;
+     margin-left:35%;
     margin-right:5%;
     position: absolute;
-    top: 7%;
+    top:70;
     width: 120px;
     height: 120px;
 }
 
 .nhl {
-     margin-left:50%;
+     margin-left:61%;
     margin-right:5%;
     position: absolute;
-    top: 7%;
+     top:70;
     width: 120px;
     height: 120px;
 }
 
 
 .mlb{
-     margin-left:55%;
+     margin-left:69%;
     margin-right:5%;
     position: absolute;
-    top: 7%;
+     top:70;
 }
 
 .new{
-     margin-left:60%;
+     margin-left:77%;
     margin-right:5%;
     position: absolute;
-    top: 7%;
+     top:70;
 }
 
 
 
 .logo {
-background: url('http://www.tamuc.edu/facultyStaffServices/marketingCommunications/standards/logos/documents/2013-Lion-Head.png');
-background-size: 120px 120px;
+
 width: 120px;
 height: 120px;
 position: absolute;
-margin-left:42.3%;
+margin-left:45%;
 margin-right:7%;
-top: 2%;
+ top:30;
+}
+
+.top {
+    text-decoration: none;
+    color:white;
+}
+.top:hover {
+    
+    text-decoration: underline;
 }
 
 
+.top:visited {
+    color:white;
+    text-decoration: none;
+}
 
 
 /*

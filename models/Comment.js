@@ -6,6 +6,7 @@ var CommentSchema = new mongoose.Schema({
   author: String,
   upvotes: {type: Number, default: 0},
   time : { type : Date, default: Date.now },
+  createdAt: {type:Date, default:Date.now },
   post: { type: mongoose.Schema.Types.ObjectId, ref: 'Post' }
 });
 

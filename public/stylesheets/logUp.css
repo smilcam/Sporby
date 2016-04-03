@@ -1,13 +1,19 @@
-.logMain {
-    height:100vh;
-    display:flex;
-    justify-content:middle;
-    justify-content: space-around;
-    margin-left:25%;
-    margin-right:25%;
-    
-    
+
+
+.logupContainer {
+   left:10;
+ margin: 0 2.5%;
+  margin-top: 50px;
+  width:95%;
+  position:absolute;
+  font:normal x-small verdana,arial,helvetica,sans-serif;
+  clear: both;
+ height:550px;
+ display:flex;
+   justify-content: center;
 }
+
+
 
 
 
@@ -17,9 +23,10 @@
     background-color:#F4F9FF;
     box-shadow:rgba(0,0,0,0.5) 0px 0px 20px;
     padding-top:10px;
-    position: relative;
     margin: 0 auto;
     margin-top:5%;
+    margin-right:10%;
+    margin-left:10%;
    
 }
 
@@ -29,7 +36,7 @@
     font-weight: bold;
     font-size: 23px;
     font-family: Verdana,Geneva,sans-serif;
-    margin-top:5%;
+    margin-top:10%;
 }
 
 
@@ -46,7 +53,7 @@
             0 0 16px rgba(0,0,0,0.1); 
     padding: 15px;
     background: rgba(255,255,255,0.5);
-   margin-left:10%;
+    margin-left:10%;
     width: 80%;
     
 }
@@ -79,7 +86,7 @@
 	border:1px solid #1A87B9;
     position: relative;
     margin-top:5%;
-  margin-right: 10%;
+    margin-right:10%;
     
     
 }
@@ -90,4 +97,50 @@
 
 .log {
     margin-left:60%;
+    width:30%;
 }
+.reg {
+    margin-left:60%;
+    width:30%;
+}
+
+
+
+.myRules {
+    width:100%;
+    height:100%;   
+}
+
+
+.myRules p {
+    font-size:20px;
+}
+.iframeContainer {
+     left:10;
+ margin: 0 2.5%;
+  margin-top: 50px;
+  background-color: white;
+  width:95%;
+  box-shadow: rgba(0,0,0,0.5) 0px 0px 20px;
+  position:absolute;
+  font:normal x-small verdana,arial,helvetica,sans-serif;
+  clear: both;
+ height:100vh
+}
+
+
+iframe {
+    width: 95%;
+    height:98vh;
+    margin: 0 2.5%;
+     
+
+ 
+}
+
+.bballContent {
+    margin:50%;
+    height:100vh;
+}
+
+.highlighted { background: yellow }

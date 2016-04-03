@@ -14,8 +14,13 @@ module.exports = {
     
     
 read: function(req, res, next) {
+    console.log('something')
    Post.find(function(err, posts){
-   if(err){ return next(err); }
+   if(err) {
+       console.error(err);
+       return res.status(500).json(err);
+       
+   }
 
     res.json(posts);
   });
@@ -45,8 +50,7 @@ read: function(req, res, next) {
 }, 
 
 postReturn: function(req, res, next) {
-    Post.findById(req.params.post, 
-     Post.find({})
+    Post.findById(req.params.post)
     .populate('comments')
     .exec(
     function(err, post){

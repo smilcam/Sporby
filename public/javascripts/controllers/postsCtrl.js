@@ -7,6 +7,17 @@ app.controller('PostsCtrl', [
 'post',
 'auth',
 function($scope, $stateParams, posts, post, auth){
+$scope.pageSize =13; 
+
+$scope.myFilters = [
+    {name: 'Most Votes', type: '-upvotes'},
+    {name: 'Recently Posted', type: '-time'},
+] 
+$scope.predicate = "-upvotes";
+ $scope.order = function(predicate) {
+    $scope.reverse = ($scope.predicate === predicate) ? !$scope.reverse : false;
+    $scope.predicate = predicate;
+  };
 
 $scope.post = post;
 
@@ -25,7 +36,7 @@ $scope.addComment = function(){
 
 $scope.isLoggedIn = auth.isLoggedIn;
 
-$scope.incrementUpvotes = function(comment, post, index) {
+$scope.incrementUpvotes = function(comment, post, index, auth) {
    posts.upvoteComment(comment, post).then(function(response){
        console.log(response.data);
        $scope.posts[index] = response.data
@@ -34,3 +45,5 @@ $scope.incrementUpvotes = function(comment, post, index) {
     
 
 }]);
+
+
