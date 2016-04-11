@@ -1,0 +1,85 @@
+<div class = 'mainContainer'>
+
+            <div class = "forumHeader">
+                <h1>NFL</h1>
+            </div>
+
+<!--FILTERS-->
+  <div class = 'filters'>
+
+         <!--<button class="daFilters" ng-click="order('-upvotes')">Upvotes</button>
+         
+         <button class="daFilters" ng-click="order('-time')">Recently Posted</button>-->
+         
+      <a class="btn-9" ng-click="order('-upvotes')"><span>UPVOTES</span></a>
+      <a class="btn-9" ng-click="order('-time')"><span>RECENT</span></a>
+
+  </div>
+         
+  <div class="page-header">
+    <!--POST LINK-->
+        <a class="pageHead" ng-show="post.link" href="{{post.link}}">
+        {{post.title}}
+      </a>
+      <span class="pageHead" ng-hide="post.link">
+        {{post.title}}
+      </span>
+
+  </div>
+  
+
+
+ <!--COMMENT CONTENT-->
+
+
+    <div class='forum' ng-repeat="comment in post.comments  | myFilter: (currentPage - 1) * pageSize | limitTo: pageSize | orderBy :predicate ">
+         
+<div class = "bothUpvotes">
+     <span class ="upvoteNubers"
+      ng-click="incrementUpvotes(comment, post, $index)">
+        <img class = "upArrow" src='./images/up-arrow36.png'>
+      </span>
+      
+       <h1 class ="upvoteNumbers">  {{comment.upvotes}} </h1> 
+ </div>
+      
+  <div class ="bottomStuff">    
+       <span class='justTitle'>
+                    {{comment.body}}
+                    </span>
+                                     
+   <a class="authorLink comment"> submitted: {{comment.time | date:'MM/dd h:mma'}}| by- {{comment.author}}</a> 
+                   
+                    
+  </div>    
+    
+    
+    
+    
+  </div>
+     <uib-pagination class="paginate" 
+  total-items="post.comments.length" 
+  ng-model="currentPage" 
+  items-per-page ="pageSize">
+   </uib-pagination>
+       
+ </div>
+
+ <div class="sideBar">
+     <div class="addcomment">
+    <form class='submitForm' ng-submit="addComment()">
+    <h1 class="createComment">Create Comment</h1>
+
+    <div class="form-group">
+      <textarea type="text"
+      class="form-control"
+      placeholder="Comment (max 250 characters)"
+      ng-model="body" maxlength="250"></textarea>
+    </div>
+    <button class="commentBtn"  type="submit">Post</button>
+  </form>
+  </div>     
+
+
+  
+  </div>

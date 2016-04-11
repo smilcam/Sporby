@@ -1,0 +1,37 @@
+
+
+            <div class = "forumHeader">
+                <h1> HOME</h1>
+            </div>
+
+  <div class = 'filters'>
+    
+    <nav class = "topFilters"> 
+        
+     <label class='sortBy'> Sort By: </label>   
+     <select class ='sort' ng-options = 'filter.name for filter in myFilters' ng-model='filterByDis'>
+      
+     </select>
+     
+         
+      </ul> 
+      </nav>
+
+
+  
+    <nav class="logup" ng-controller="NavCtrl">
+    <ul class="nav navbar-nav">
+        <li ng-hide="isLoggedIn()"><a href="/#/login">Log In</a></li>
+          <li ng-show="isLoggedIn()"><a>{{ currentUser() }}</a></li>
+          <li> / </li>
+          
+         <li ng-hide="isLoggedIn()"><a href="/#/register">Register</a></li>
+          <li ng-show="isLoggedIn()"><a href="" ng-click="logOut()">Log Out</a></li>
+           
+    
+     
+      
+     
+     
+    </ul>
+  </nav>
